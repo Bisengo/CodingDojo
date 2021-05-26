@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form action="process.php" method="post">
+        <div class="container">
+            <h1>My Registration Form </h1>
+
+            <p>please fill in the registration form below</p>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name"><br><br>
+       
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name"><br><br>
+       
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <label for="pw_confirm">Password Confirmation:</label>
+            <input type="password" id="pw_confirm" name="password_confirmation"><br><br>
+
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday"><br><br>
+
+            <p>Select your gender:</p>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+        
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br>
+
+            <p>Say a few words about yourself:</p>
+            <textarea name="description"></textarea><br><br>
+        
+            <p>Select 3 of your favorite languages:</p>
+            <input type="checkbox" id="javascript" name="language" value="javascript">
+            <label for="javascript">Javascript</label><br>
+
+            <input type="checkbox" id="java" name="language" value="java">
+            <label for="java">Java</label><br>
+
+            <input type="checkbox" id="python" name="language" value="python">
+            <label for="python">Python</label><br>
+
+            <input type="checkbox" id="c++" name="language" value="c++">
+            <label for="c++">Cplusplus</label><br>
+            
+            <input type="checkbox" id="php" name="language" value="php">
+            <label for="php">PHP</label><br><br>
+
+            <input type="submit" value="Click here to register">
+        </div>
+    </form>
+    
+</body>
+</html>

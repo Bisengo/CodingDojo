@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery / Javascript Lecture</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //using raw javascript:
+
+            // var btn = document.getElementById('btn');
+            // btn.addEventListener('click', function () {
+            //     var pTag = document.getElementById('first-p');
+            //     pTag.style.backgroundColor = 'green';
+            // })
+
+            //console.log('Hello');
+
+            //using pure jQuery:
+
+            $('#btn').click(function () {
+                var pTag = $('#first-p');
+                pTag.css('backgroundColor', 'green');
+            })
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <p id='first-p'>Hello everyone watching!</p>
+    <button id='btn'>Click Me!</button>
+    <script>
+        // console.log(document);
+        // console.dir(document);
+        //console.dir(document.URL);
+        //var pTag = document.getElementById('first-p');
+        //console.log(pTag);
+        //console.dir(pTag);
+        //pTag.style.backgroundColor = 'green';
+
+        // var btn = document.getElementById('btn');
+        // btn.addEventListener('click', function () {
+        //     alert('Hello');
+        // })
+
+        // var btn = document.getElementById('btn');
+        // btn.addEventListener('click', function () {
+        //     var pTag = document.getElementById('first-p');
+        //     pTag.style.backgroundColor = 'green';
+        // })
+
+    </script>
+
+</body>
+
+</html>

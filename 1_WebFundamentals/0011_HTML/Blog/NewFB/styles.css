@@ -1,0 +1,23 @@
+body {
+    background-color : rgb(125, 138, 141) ;
+    margin : 0px;
+    color:white;
+}
+
+h1 {
+    color:rgb(250, 193, 179);
+    width:650px;
+    margin:100px;
+}
+
+#tagline {
+    color:tomato;
+}
+
+#wrapper {
+    background-color: black;
+    width: 800px;
+    margin: 20px auto;
+    padding:20px;
+}
+

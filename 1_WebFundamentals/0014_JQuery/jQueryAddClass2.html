@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQueryAddClass2</title>
+    <style>
+        div {
+            background: white;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .red.green {
+            background: green;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div>This div should be white</div>
+    <div class="red">This div will be green because it now has the "green" and "red" classes.
+        It would be red if the addClass function failed.</div>
+    <div>This div should be white</div>
+    <p>There are zero green divs</p>
+
+    <script>
+        //Pass in a function to .addClass() to add the "green" 
+        //class to a div that already has a "red" class.
+        $("div").addClass(function (index, currentClass) {
+            var addedClass;
+
+            if (currentClass === "red") {
+                addedClass = "green";
+                $("p").text("There is one green div");
+            }
+
+            return addedClass;
+        });
+    </script>
+</body>
+
+</html>

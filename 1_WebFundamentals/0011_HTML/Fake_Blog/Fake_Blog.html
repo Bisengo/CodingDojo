@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Blog</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          }
+        th, td {
+            padding: 10px;
+        }
+        table#t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        table#t01 th {
+            background-color: rgb(214, 195, 195);
+        }
+        #p01{
+            max-width: 500px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="introduction">
+        <h1>MICHAEL JORDAN</h1><br><br>
+
+        <img src="MichaelJordan.jpg" alt="The Greatest Ever" width="200px" height="250px">
+    </div>
+
+
+
+    <p id="p01">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut neque in massa efficitur blandit sed et
+    libero. Curabitur porttitor quam sit amet tortor sagittis, eget molestie nulla mollis. Aenean a diam nunc.
+    Proin imperdiet lobortis sem ac sollicitudin. Vestibulum aliquet eget sapien sit amet lobortis. Phasellus
+    accumsan viverra nisi a varius. Pellentesque vitae ex at sapien blandit faucibus id eget orci. Proin
+    pharetra, nunc ut rhoncus maximus, urna libero ultrices diam, et ullamcorper tortor massa eu elit. Vivamus
+    fermentum molestie dui, id vulputate erat feugiat eu. Nunc efficitur aliquet sapien, eu placerat mi sagittis
+    sed. Donec venenatis augue purus, quis vestibulum urna facilisis eu. Praesent egestas diam tortor, ut
+    pharetra sem iaculis in. Praesent elit orci, volutpat ut enim sit amet, lacinia elementum massa. Praesent
+    facilisis tortor purus, auctor iaculis nisi egestas nec. Donec lectus sem, consequat at ipsum sed,
+    ullamcorper hendrerit odio. Fusce vehicula vitae ante vel elementum</p>
+
+
+
+    <h1>CAREER</h1>
+
+    <table id="t01">
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>PPG</th>
+                <th>MVP</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1990-91</td>
+                <td>31.5</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>1991-92</td>
+                <td>30.1</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>1992-93</td>
+                <td>32.6</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>1995-96</td>
+                <td>30.4</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>1996-97</td>
+                <td>29.6</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>1997-98</td>
+                <td>28.7</td>
+                <td>Yes</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>1984 - 1993: Chicago Bulls</li>
+        <li>1995 - 1998: Chicago Bulls</li>
+        <li>2001 - 2003: Washington Wizards</li>
+    </ul>
+
+    <a href="#">Click For Awesome Highlight Video</a>
+
+    <h4>Please take a short survey</h4>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br><br>
+
+    <input type="radio" id="followup" name="contact">
+    <label for ="followup">Yes, send me a lot of emails</label>
+    <input type="radio" id="followup" name="contact">
+    <label for ="followup">No, please do not send me any emails</label>
+
+
+    <h4>How did you ear from us?</h4>
+    <input type="checkbox" id="option1" name="media">
+    <label for="option1">Facebook</label>
+    <input type="checkbox" id="option2" name="media">
+    <label for="option2">Newspaper</label>
+    <input type="checkbox" id="option3" name="media">
+    <label for="option3">Referral</label><br><br><br>
+</body>
+</html>

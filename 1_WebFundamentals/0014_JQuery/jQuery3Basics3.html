@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        //LEARNING GETTERS AND SETTERS
+        $(document).ready(function () {
+            // $('button').click(function () {
+            //     //a getter function gets the value of something
+            //     var myText = $('#myParagraph').text();
+            //     alert(myText);
+            // })
+
+            //a setter function sets the value of something
+            $('button').click(function () {
+                $('#myParagraph').text('see how I .text() works as a setter!');
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+
+</body>
+<p id='myParagraph'>This is my paragraph</p>
+<button>Click me to change the paragraph</button>
+</body>
+
+</html>
