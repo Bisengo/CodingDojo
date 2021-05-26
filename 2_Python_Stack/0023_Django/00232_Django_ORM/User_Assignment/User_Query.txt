@@ -1,0 +1,67 @@
+********QUERY FILES********
+
+Query: Create 3 new users
+--------------------------
+
+User.objects.create(first_name="John", last_name="Kabongo", email_address="JKabongo@dojo.com", age=27, created_at="2020-01-01", updated_at="1020-01-01")
+
+User.objects.create(first_name="Kevin", last_name="Mombombo", email_address="Kevin@python.com", age=35, created_at="2020-02-02", updated_at="2020-03-01")
+
+User.objects.create(first_name="Kenya", last_name="Masai", email_address="Masai@codingdojo.com", age=22, created_at="2020-03-03", updated_at="2020-04-01")
+
+=======================================================================================
+
+Query: Retrieve all the users
+-----------------------------
+
+User.objects.all()
+
+=======================================================================================
+
+Query: Retrieve the last user
+-----------------------------
+
+User.objects.last()
+
+======================================================================================
+
+Query: Retrieve the first user
+------------------------------
+
+User.objects.first()
+
+======================================================================================
+
+Query: Change the user with id=3 so their last name is Pancakes.
+---------------------------------------------------------------
+
+updated = User.objects.get(id=3)
+updated = User.objects(last_name="Pancakes")
+updated.save()
+
+=======================================================================================
+
+Query: Delete the user with id=2 from the database
+--------------------------------------------------
+
+deleted = User.objects.get(id=2)
+deleted.delete()
+
+========================================================================================
+
+Query: Get all the users, sorted by their first name
+----------------------------------------------------
+
+User.objects.all().order_by("first_name)
+
+========================================================================================
+
+BONUS Query: Get all the users, sorted by their first name in descending order
+------------------------------------------------------------------------------
+
+User.objects.all().order_by("-first_name)
+
+
+
+
+

@@ -1,0 +1,38 @@
+>>> from dojo_ninjas_app import *
+
+Dojo.objects.create(name='Bukari', city='Chicago', state='IL')
+Dojo.objects.create(name='Okoto', city='Philadelphia', state='VA')
+Dojo.objects.create(name='Dikembe', city='Bloomington', state='IN')
+
+Dojo.objects.delete(Dojo.objects.get(id=1))
+Dojo.objects.delete(Dojo.objects.get(id=2))
+Dojo.objects.delete(Dojo.objects.get(id=3))
+
+dojo1 = Dojo.objects.create(name='Bukari', city='Chicago', state='IL')
+dojo1.save()
+dojo2 = Dojo.objects.create(name='Okoto', city='Philadelphia', state='VA')
+dojo2.save()
+dojo3 = Dojo.objects.create(name='Dikembe', city='Bloomington', state='IN')
+dojo3.save()
+
+ninja1 = Ninja.objects.create(dojo_int = 1, firstname = 'Bolingo', lastname = 'Akira', link = dojo1)
+ninja2 = Ninja.objects.create(dojo_int = 1, firstname = 'Kobe', lastname = 'Tukumira', link = dojo1)
+ninja3 = Ninja.objects.create(dojo_int = 1, firstname = 'John', lastname = 'Watabira', link = dojo1)
+
+ninja4 = Ninja.objects.create(dojo_int = 2, firstname = 'A', lastname = 'B', link = dojo2)
+ninja5 = Ninja.objects.create(dojo_int = 2, firstname = 'C', lastname = 'D', link = dojo2)
+ninja6 = Ninja.objects.create(dojo_int = 2, firstname = 'E', lastname = 'F', link = dojo2)
+
+ninja7 = Ninja.objects.create(dojo_int = 3, firstname = 'G', lastname = 'H', link = dojo3)
+ninja8 = Ninja.objects.create(dojo_int = 3, firstname = 'I', lastname = 'J', link = dojo3)
+ninja9 = Ninja.objects.create(dojo_int = 3, firstname = 'K', lastname = 'L', link = dojo3)
+
+dojo1.ninjas.all()
+
+dojo3.ninjas.all()
+
+ninja9.link
+
+dojo4 = Dojo.objects.create(name='Pascal', city='Angola', state='OR', desc = 'yebo')
+
+

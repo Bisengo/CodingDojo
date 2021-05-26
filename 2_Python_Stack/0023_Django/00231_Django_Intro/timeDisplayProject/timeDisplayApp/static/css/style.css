@@ -1,0 +1,23 @@
+    #body{ 
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;        
+            width: 700px;
+            height: 400px;
+        }
+    #title{
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+        }
+    #box{
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+            padding: 20px;
+            text-align: center;
+        }

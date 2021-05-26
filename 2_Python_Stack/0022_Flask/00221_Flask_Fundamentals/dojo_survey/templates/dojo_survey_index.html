@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOJO SURVEY FORM</title>
+    <style>
+        #wrapper{
+            text-align:center;
+        }
+        .form-group {
+            display: table-row;
+            padding-bottom: 1em;
+        }
+
+        label {
+            display: table-cell;
+            vertical-align: top;
+            padding: 0 .5em .5em
+        }
+    </style>
+</head>
+<body>
+    <div id=wrapper>
+        <form action="/process" method="post">
+            <div class="form-group">
+                <label for="yourName">Your Name:</label>
+                <input type="text" id="yourName" name="username">
+            </div>
+            <div class="form-group">
+                <label for="location">Dojo Location</label>
+                <select name="location" id="location">
+                    <option selected disabled>Select Your Dojo Location</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Washington DC">Washington DC</option>
+                    <option value="Seattle WA">Seattle WA</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Remote">Remote</option></select>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="language">Language</label>
+                <select name="language" id="language">
+                    <option selected disabled>Select Your Favorite Language</option>
+                    <option value="Cplusplus">C++</option>
+                    <option vakye="Csharp">C#</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Python">Python</option>
+                    <option value="R">R</option><br><br>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment (optional):</label>
+                <textarea name="comment"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Press button to submit</label>
+                <input type="submit" value="submit"></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

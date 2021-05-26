@@ -1,0 +1,307 @@
+
+Practice using pip in a virtual environment: Run the following commands:
+
+1) pip list
+
+2) deactivate (This will deactivate your virtual environment)
+
+3) pip3 list (How is the result different from when you ran pip list with the virtualenv activated? Hint, you should not have as many things listed when the virtualenv is deactivated. If your results are the same, go back and figure out what went wrong.)
+
+4) source myEnvironments/py3Env/bin/activate (Adjust the path as needed to re-activate the virtualenv; for windows call myEnvironments/py3Env/Scripts/activate)
+
+5) pip install Django==2.2.4 (What information do you see returned in terminal after this command?)
+
+6) pip freeze (What's the difference between freeze and list?)
+
+7) First cd into your Desktop directory (cd ~/Desktop), then run this command: pip freeze > requirements.txt. What do you see when you ls? What's inside this file?
+
+8) pip uninstall Django
+
+9) pip show Django
+
+===============================================
+
+1)
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>pip
+
+Usage:
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  config                      Manage local and global configuration.
+  search                      Search PyPI for packages.
+  cache                       Inspect and manage pip's wheel cache.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  debug                       Show information useful for debugging.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be used up to 3 times (corresponding to
+                              WARNING, ERROR, and CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup,
+                              (a)bort.
+  --trusted-host <hostname>   Mark this host or host:port pair as trusted, even though it does not have valid or any
+                              HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file containing the private key and the
+                              certificate in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine whether a new version of pip is available for
+                              download. Implied with --no-index.
+  --no-color                  Suppress colored output
+  --no-python-version-warning
+                              Silence deprecation warnings for upcoming unsupported Pythons.
+
+
+====================================================================================
+
+2)
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>deactivate
+C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>
+
+====================================================================================
+
+3)
+C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>pip3 list
+Package             Version
+------------------- -------
+appdirs             1.4.3
+astroid             2.3.3
+bcrypt              3.1.7
+cffi                1.14.0
+click               7.1.1
+colorama            0.4.3
+distlib             0.3.0
+filelock            3.0.12
+Flask               1.1.2
+importlib-metadata  1.6.0
+importlib-resources 1.4.0
+isort               4.3.21
+itsdangerous        1.1.0
+Jinja2              2.11.1
+lazy-object-proxy   1.4.3
+MarkupSafe          1.1.1
+mccabe              0.6.1
+pip                 20.1
+pycparser           2.20
+pylint              2.4.4
+setuptools          39.0.1
+six                 1.14.0
+typed-ast           1.4.1
+virtualenv          20.0.17
+Werkzeug            1.0.1
+wrapt               1.11.2
+zipp                3.1.0
+
+C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>
+
+=================================================================
+
+4)
+C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>call py3Env\Scripts\activate
+
+
+5)
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>pip install Django==2.2.4
+
+Collecting Django==2.2.4
+  Using cached Django-2.2.4-py3-none-any.whl (7.5 MB)
+Collecting pytz
+  Downloading pytz-2020.1-py2.py3-none-any.whl (510 kB)
+     |████████████████████████████████| 510 kB 2.2 MB/s
+Collecting sqlparse
+  Using cached sqlparse-0.3.1-py2.py3-none-any.whl (40 kB)
+Installing collected packages: pytz, sqlparse, Django
+Successfully installed Django-2.2.4 pytz-2020.1 sqlparse-0.3.1
+
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>
+
+
+===================================================================
+
+6)
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>pip freeze
+Django==2.2.4
+pytz==2020.1
+sqlparse==0.3.1
+
+pip list lists all the packages installed
+pip freeze lists only the package installed via pip
+
+===================================================================
+
+7)
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>pip freeze > requirements.txt
+
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>dir
+ Volume in drive C is Windows
+
+ Directory of C:\Users\kbise\Documents\codingDojo\python_stack\my_environments
+
+05/08/2020  06:11 PM    <DIR>          .
+05/08/2020  06:11 PM    <DIR>          ..
+05/07/2020  02:16 PM    <DIR>          flaskEnv
+05/04/2020  07:18 AM    <DIR>          py3Env
+05/08/2020  06:11 PM                46 requirements.txt
+               1 File(s)             46 bytes
+               4 Dir(s)  904,381,087,744 bytes free
+
+
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>requirements.txt
+Django==2.2.4
+pytz==2020.1
+sqlparse==0.3.1
+(packages installed via pip are sent to a requirements.txt file to reused later to reconstruct the frozen environment)
+
+======================================================================
+
+8)
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>pip uninstall Django
+Found existing installation: Django 2.2.4
+Uninstalling Django-2.2.4:
+  Would remove:
+    c:\users\kbise\documents\codingdojo\python_stack\my_environments\py3env\lib\site-packages\django-2.2.4.dist-info\*
+    c:\users\kbise\documents\codingdojo\python_stack\my_environments\py3env\lib\site-packages\django\*
+    c:\users\kbise\documents\codingdojo\python_stack\my_environments\py3env\scripts\django-admin.exe
+    c:\users\kbise\documents\codingdojo\python_stack\my_environments\py3env\scripts\django-admin.py
+Proceed (y/n)? y
+  Successfully uninstalled Django-2.2.4
+
+=====================================================================
+
+9)
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>pip show Django
+WARNING: Package(s) not found: Django
+
+=====================================================================
+
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>pip search Flask
+Flask-Pure (0.5)            - Flask-Pure - a Flask extension for Pure.css
+Flask-SimpleMDE (0.3.0)     - Flask-SimpleMDE - a Flask extension for SimpleMDE
+Flask-OrientDB (0.1)        - A Flask extension for using OrientDB with Flask
+Flask-ElasticUtils (0.1.7)  - ElasticUtils for Flask
+Flask-PubSub (0.1.0)        - Flask-PubSub
+Flask-Waitress (0.0.1)      - Flask Waitress
+flask-zs (0.0.24)           - A helpers for Flask.
+Flask-BDEA (0.1.0)          - Flask-BDEA
+Flask-SRI (0.1.0)           - Flask-SRI
+flask-ws (0.0.1.0)          - Websocket for flask.
+Flask-MDE (1.2.0)           - Pagedown for Flask
+flask-helloworld (1.0.0)    - Flask Helloworld
+sockjs-flask (0.3)          - SockJs for Flask
+Flask-Stripe (0.1.0)        - Flask-Stripe
+Flask-Quik (0.1.1)          - Quik for Flask
+Flask-Helper (0.19)         - Flask Helper
+Flask-GripControl (0.0.1)   - Flask GripControl
+Flask-TinyMce (0.1.6)       - flask tinymce
+Flask-Watson (0.1.0)        - Flask-Watson
+Flask-Shopify (0.2)         - Shopify Flask
+Flask-Ext (0.1)             - Extensions of Flask
+Flask-Intercom (0.1.0)      - Flask-Intercom
+Flask-SPF (0.0.0)           - Flask-SPF
+flask-toolbox (0.0.2)       - A flask toolbox.
+Flask-Turbolinks (0.2.0)    - Turbolinks for Flask.
+Flask-FileRev (0.1.0)       - Flask-FileRev
+Flask-TaskTiger (0.0.1)     - Flask TaskTiger
+Flask-Weixin (0.5.0)        - Weixin for Flask.
+flask-abort (0.0.1)         - flask abort
+Flask-Mustache (0.4.1)      - Mustache for Flask
+Fifty-Flask (1.4.0)         - Flask enhancements.
+Flask-Chargebee (0.0.1)     - Flask-Chargebee
+flask-ypaginate (0.1.3)     - Pagination for Flask
+Flask-OAuthlib (0.9.5)      - OAuthlib for Flask
+Flask-Keen (0.1.0)          - Flask-Keen
+Flask-AutoIndex (0.6.6)     - The mod_autoindex for Flask
+Flask-Clearbit (0.1.0)      - Flask-Clearbit
+Flask-FontAwesome (0.1.4)   - FontAwesome for Flask
+Flask-NextCaller (0.1.0)    - Flask-NextCaller
+Flask-Gears (0.2)           - Gears for Flask
+airbrake-flask (1.0.7)      - airbrake-flask - Airbrake client for Python Flask
+Flask-GeoIP (0.1.3)         - Flask-GeoIP -------------  Simple Flask extension for pygeoip.
+Flask-Diced (0.3)           - Flask-Diced - CRUD views generator for Flask
+flask-myapi (0.1)           - Flask-MyAPI - RESTful support library for Flask
+Flask-RESTive (0.0.3)       - Flask RESTive is a REST API Flask extension based on Flask-RESTful & Marshmallow.
+Flask-LoginManager (1.1.6)  - Flask-Loginmanager supports multiple roles and permissions for Flask, inspired by Flask-
+                              Login
+Flask-FlatPagesCut (0.5.1)  - Flask-FlatPagesCut is fork Flask-FlatPages (Provides flat static pages to a Flask
+                              application)
+flask-lesscss (0.9.1)       - A small Flask extension that adds LessCSS support to Flask.
+flask-stylus2css (0.1)      - A small Flask extension that adds Stylus support to Flask.
+flask-shell (0.1.3)         - Flask extension to improve shell command for the Flask CLI.
+flask-coffee2js (0.1.2)     - A small Flask extension that adds CoffeScript support to Flask.
+Flask-Collect (1.3.2)       - Flask-Collect -- Collect static files in Flask application
+flask-filters (0.3)         - The Flask Filter to use with flask-restful and Relational DB
+Flask-Shelve (0.1.1)        - Shelve support for Flask
+Flask-OpenID (1.2.5)        - OpenID support for Flask
+Flask-Edits (0.8)           - Editable Content in Flask
+Flask-Zero (0.9.6)          - Qiniu Storage for Flask
+Flask-CuttlePool (0.2.0)    - A Flask extension for CuttlePool
+Flask-SaeStorage (0.9.0)    - SAE Storage for Flask
+Flask-Navigation (0.2.0)    - The navigation of Flask application.
+Flask-Passlib (0.1)         - Flask extension for passlib
+flask-serial (1.1.0)        - Flask extension for the Serial
+flask-discoverer (0.1.4)    - Flask API autodiscovery
+flask-iMail (0.1)           - Mailgun integration for Flask.
+flask-snow (0.2.8)          - Pysnow extension for Flask
+Flask-ZMQ (0.1.2)           - Flask extension for ZMQ
+Flask-wechatpy (0.1.3)      - wechatpy for flask extension
+Flask-Enterprise (1.0)      - Enterprise capabilities for Flask
+flask-tat (0.0.10)          - Flask TAT client
+Flask-Failsafe (0.2)        - A failsafe for the Flask reloader
+nailpack-flask (0.1.0)      - Flask support for nails
+Flask-Testing (0.8.0)       - Unit testing for Flask
+Flask-Avatar (0.1.3)        - To generate avatar for flask
+Flask-wangEditor (0.0.3.2)  - wangEditor integration for Flask.
+flask-adh (0.1)             - flask admin antd
+Flask-Sixpack (0.0.1)       - Flask wrapper for Sixpack
+Flask-MySQLdb (0.2.0)       - MySQLdb extension for Flask
+flask-blitzdb (0.1)         - Flask extension for blitzdb
+Flask-RBAC (0.3.0)          - RBAC support for Flask
+Flask-Airbrake (0.0.3)      - Flask extension for Airbrake
+castle-flask (0.0.1)        - A Flask client for Castle.io
+flask-handlers (0.0.1)      - Handlers for Flask applications
+flask-keycloak (1.1.0)      - flask integration with keycloak
+Flask-PRBAC (0.1.3)         - RBAC support for Flask
+flask-bluelogin (0.2.7)     - Flask BlueLogin module
+Flask-CassandraDB (0.0.1)   - connect cassandra to flask
+Flask-Sendmail (0.1)        - Flask extension for sendmail
+Flask-Fleem (0.0.5)         - Theming for Flask applications
+Flask-Reggie (0.0.2)        - Flask Regex Routes.
+flask-mm (0.0.13.dev0)      - Media Manager for flask
+hyperdns-flask (0.9.4)      - HyperDNS Flask Utilities
+digicubes-flask (0.0.23)    - A digicubes flask addon
+Flask-OpenERP (0.3.1)       - OpenERP Connector for Flask
+Flask-CKEditor (0.4.4.1)    - CKEditor integration for Flask.
+Flask-Triangle (0.5.4)      - Integration of AngularJS and Flask.
+Flask-Funnel (0.1.10)       - Asset management for Flask.
+Flask-Breve (0.2)           - Breve templating with Flask
+Flask-mongobit (0.3.0)      - MongoBit support in Flask
+flask-logsocketio (0.1.4)   - Flask LogSocketIo module
+Flask-Triangle3 (0.5.3)     - Integration of AngularJS and Flask.
+
+(py3Env) C:\Users\kbise\Documents\codingDojo\python_stack\my_environments>
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<h1>, initial-scale=1.0">
+    <title>Document</title>
+    <!-- {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  -->
+    <style>
+        #body {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;        
+            width: 700px;
+            height: 400px;
+        }
+        #text1{
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        #text2{
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+            padding: 20px;
+            text-align: center;
+        }
+        #button{
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div id='body'>
+        <div id='text1'>
+            <h1 >Random Word (Attempt # {{request.session.counter}})</h1>
+        </div>
+
+        <div id='text2'>
+            <h1>{{randomword}}</h1>
+        </div>
+
+        <div id='button'>
+            <!--<a href="/"><button>Generate</button></a>-->
+            <form action='/generate' method='post'>
+                {% csrf_token %}
+                <input type='submit' value='generate'>
+            </form><br>
+            <a href="http:/reset">Reset Game</a>
+        </div>
+    </div>
+</body>
+</html>

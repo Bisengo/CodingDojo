@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div style='text-align:center'>
+        <h3>Welcome to the Great Number Game</h3>
+        <p>I am thinking of a number between 1 to 100</p>
+        <p>Take a guess! {{randnum}}</p>
+    </div>
+
+    <div style='text-align:center'>
+        <form action="/guess" method="post">
+            <input type="text" name="userguess" id=""><br>
+            <input type="submit" value="submit">
+        </form>
+        <p>The user guess is {{userguess}}</p>
+    </div>        
+</body>
+</html>

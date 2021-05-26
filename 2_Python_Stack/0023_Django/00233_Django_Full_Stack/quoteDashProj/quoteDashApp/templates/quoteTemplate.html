@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .allquote, .addquote{
+            display:inline-block;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+    <div class="allquotes">
+        <h3> Welcome: </h3>
+        <h3>World</h3>
+    </div>
+
+    <div class="addquote">
+        <p><a href="">Edit my Account</a> <input type="submit" value="Logout"></p>
+        <h3>Add a Quote</h3>
+        <form action="/quotes/addquote" method="post">
+            {% csrf_token %}
+            <p>Author: <input type="text" name="authorFromHtml" id=""><p>
+            <p>Content: <textarea name="contentFromHtml" id="" cols="30" rows="10"></textarea> 
+            <p><input type="submit" value="Submit"></p>
+        </form>
+    </div>
+</body>
+</html>

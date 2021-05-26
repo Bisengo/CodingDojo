@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{all_bdays}}
+    {% for bday in all_bdays %}
+        <p>{{bday.value}}</p>
+        <a href="/edit_bday/{{bday.id}}">Edit this bday</a>
+    {% endfor %}
+    <br><br>
+    <form action="/process_form" method="post">
+        {% csrf_token %}
+        <label>SomeDate</label>
+        <input type="date" name="some_date" id="">
+        <button type="submit">Go</button>
+        
+    </form>
+</body>
+</html>

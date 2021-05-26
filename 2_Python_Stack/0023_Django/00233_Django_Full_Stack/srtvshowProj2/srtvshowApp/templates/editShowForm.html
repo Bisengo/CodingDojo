@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Show</title>
+</head>
+<body>
+    {% for error in messages %}
+        <p style="color: red">{{error}}</p>
+    {% endfor %}
+
+    <a href="/shows">Go Back</a>
+    <h1>Edit Show #: {{showobj.id}}</h1>
+    <form action="/shows/{{showobj.id}}/update" method="post">
+        {% csrf_token %}
+        <label>Title</label><br>
+        <input type="text" name="ftitle" id="" value="{{showobj.title}}"><br><br>
+        <label>Netowrk</label>
+        <input type="text" name="fnetwork" id="" value="{{showobj.network}}">
+        <label>Release Date</label>
+        <input type="date" name="frelease" id="" value="{{showobj.release_date}}"><br><br>
+        <label>Description</label>
+        <textarea name="fdesc" >{{showobj.desc}}</textarea><br><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/shows/{{showobj.id}}">Go to Show</a>
+</body>
+</html>

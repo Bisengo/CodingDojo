@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+</head>
+<body>
+
+    <h1>Sucess! Welcome: {{loggedinId.userName}}</h1>
+    <p>Your Are Successfully Registered (or Logged In)!</p>
+    <P><a href="/logout">Logout</a></P>
+
+    <h1>Quotable Quotes</h1>
+
+    {% for quoteobj in notmyfavquotes %}
+    <table>
+        {% if loggedinId == quoteobj.uploader %}
+        <tr>
+            <th></th>
+            <td>
+                <a href="quotes/{{quoteobj.id}}/edit">Edit</a> || 
+                <a href="/delete/{{quoteobj.id}}">Delete</a>
+            </td>
+        </tr>
+        {% endif %}
+        <tr>
+            <th>{{quoteobj.author}}: </th>
+            <td>{{quoteobj.content}}</td>  
+        </tr>
+        <tr>
+            <th>Posted By</th>
+            <td><a href="users/{{quoteobj.uploader.id}}">{{quoteobj.uploader.userName}}</a></td>
+        </tr>
+        <tr>
+            <td>
+                <form action="/addToFav/{{quoteobj.id}}">
+                    <input type="submit" value="Add To Favorite">
+                </form>
+            </td><br>
+        </tr>
+        
+    <table>
+    {% endfor %}
+
+    <h1>Your Favorites</h1>
+    <table>
+        {% for quoteobj in myfavquotes %}
+        <tr>
+            <th>{{quoteobj.author}}:</th>
+            <td>{{quoteobj.content}}</td>  
+        </tr>
+        <tr>
+            <th>Posted By</th>
+            <td><a href="users/{{quoteobj.uploader.id}}">{{quoteobj.uploader.userName}}</a></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <form action="/removefromFav/{{quoteobj.id}}">
+                    <input type="submit" value="Remove From Favorite">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    <table>
+    
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color:red;">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+    <div>
+        <h1>Contribute A Quote</h1>
+        <form action="/contribute" method="post">
+            {% csrf_token %}
+            <p>Quoted by: <input type="text" name="fauthor" id=""></p>
+            <p>Message: </p><textarea name="fcontent" id="" cols="30" rows="10"></textarea></p>
+            <p><input type="submit" value="Submit"></p>
+        </form>
+    </div>
+
+</body>
+</html>

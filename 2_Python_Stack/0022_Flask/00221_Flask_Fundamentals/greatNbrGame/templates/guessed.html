@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            text-align:center
+            border:1px solid black;
+            color: black;
+        }
+        #inferior{
+            text-align:center;
+            background-color: red;
+        }
+        #superior{
+            text-align:center;
+            background-color: red;
+        }
+
+        #equal{
+            text-align: center;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div style='text-align:center'>
+        <h3>Welcome to the Great Number Game</h3>
+        <p>I am thinking of a number between 1 to 100</p>
+        <p>Take a guess! {{randnum}}</p>
+        <p>You guessed: {{userguess}}</p>
+    </div>
+    {% if userguess != False %}
+        {% if userguess < randnum %}
+        </div class="box" id="inferior">
+            <p>Too Low</p>
+            <form action="/guess" method="post">
+                <input type="text" name="userguess" id=""><br>
+                <input type="submit" value="submit">
+            </form>   
+        </div>
+    
+        {% elif userguess > randnum %}
+        <div class="box" id="superior">Too High
+            <p>Too High</p>
+            <form action="/guess" method="post">
+                <input type="text" name="userguess" id=""><br>
+                <input type="submit" value="submit">
+            </form>     
+        </div>
+
+        {% else %}
+        <div class="box" id="equal">
+            <p>{{userguess}} was the number</p>
+            <form action="/reset" method="post">
+                <input type="submit" value="Play Again!">
+            </form> 
+        </div>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+            }
+    </style>
+</head>
+<body>
+
+    <h1>Add an Author</h1>
+    <form action="/authors/createAuthor" method="post">
+            {% csrf_token %}
+        <p>First Name: <input type="text" name="fnFromHtml" id=""></p>
+        <p>Last Name: <input type="text" name="lnFromHtml" id=""></p>
+        <p>Notes: <textarea name="noteFromHtml" id="" cols="30" rows="10"></textarea></p>
+        <p><input type="submit" value="add"><p>
+    </form>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        {% for authorObj in authorsFromDB %}
+        <tr>
+            <td>{{authorObj.id}}</td>
+            <td>{{authorObj.first_name}} {{authorObj.last_name}}</td>
+            <td><a href="/authors/{{authorObj.id}}">View</a></td>
+        </tr>
+        {% endfor %}
+</body>
+</html>

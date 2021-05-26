@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <form action="/checkout" method="post">
+        <table>
+            <thead>
+              <tr>
+                <th>Fruit Name</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Strawberry</td>
+                <td>
+                    <div>
+                        <select name="strawberry">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                </td>
+              </tr>
+              <tr>
+                  <td>Raspberry</td>
+                  <td>
+                      <div>
+                          <select name="raspberry">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
+                  </td>
+                </tr>
+                <tr>
+                    <td>Apple</td>
+                    <td>
+                        <div>
+                            <select name="apple">
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                          </div> 
+                    </td>
+                  </tr>
+            </tbody>
+          </table>
+          <h4>Your Information</h4>
+          <div>
+            <div>
+              <label for="firstName">First name</label>
+              <input type="text" name="first_name" placeholder="" value="">
+            </div>
+            <div>
+              <label for="lastName">Last name</label>
+              <input type="text" name="last_name" placeholder="" value="">
+            </div>
+          </div>
+            <div>
+              <label for="email">Your Student ID <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" name="student_id" placeholder="123-456-7890">
+            </div>
+              <label>Press button to submit</label>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Checkout</button>
+</body>
+</html>

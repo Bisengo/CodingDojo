@@ -1,0 +1,80 @@
+from django.db import models
+import re, bcrypt
+
+# Create your models here.
+
+class UserManager(models.Manager):
+
+    def registrationValidator(self, forminfo):
+        regValidationErrors = {}
+        EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+        print('printing forminfo in validator function')
+        print(forminfo)
+
+# Validation criteria given below
+
+# first name must be at least 2 characters
+# last name must be at least 2 characters
+        if len(forminfo['fname']) == 0:
+            regValidationErrors['firstName_blank'] = "Please enter the first name"
+        if len(forminfo['fname']) < 2:
+            regValidationErrors['firstName_short'] = "First name must be at least 2 characters"
+
+        if len(forminfo['lname']) == 0:
+            regValidationErrors['lastName_blank'] = "Please enter the last name"
+        if len(forminfo['lname']) < 2:
+            regValidationErrors['lastname_short'] = "Last name must be at least 2 characters"
+
+# email address is needed
+# email address must be valid
+# chosen email address must be already in use
+        if len(forminfo['email']) == 0:
+            regValidationErrors['email_short'] = "Please enter the email"
+        elif not EMAIL_REGEX.match(forminfo['email']):  
+            regValidationErrors['emailformat'] = "Email is invalid"
+        else:
+            usersWithEmail = User.objects.filter(email = forminfo['email'])
+            print("printing users with email now")
+            print(usersWithEmail)
+            if len(usersWithEmail)>0:
+                regValidationErrors['emailTaken'] = "Email is already taken, please try another email address."
+
+# password must be at least 8 characters
+        if len(forminfo['pw']) == 0:
+            regValidationErrors['password_blank'] = "Please enter the password"
+        if len(forminfo['pw']) < 8:
+            regValidationErrors['password'] = "Password must be at least 8 characters"
+# passwords must match
+        if forminfo['pw'] != forminfo['cpw']:
+            regValidationErrors['confirm'] = "Password and confirm password must match"
+        
+        return regValidationErrors
+
+    def loginValidator(self, forminfo):
+        loginValidationErrors = {}
+        #email is requried to log in
+        if len(forminfo['email']) < 1:
+            loginValidationErrors['email'] = "Email is required"
+        
+        #email must be found in the database, in order to log in
+        emailsExist = User.objects.filter(email = forminfo['email'])
+        print(emailsExist)
+        if len(emailsExist)== 0:
+            loginValidationErrors['emailNotFound'] = "This email was not found. Please register first."
+        else:
+            user = emailsExist[0]
+            #if email submitted in form is found in db, then password must match for that user with that email
+
+            if not bcrypt.checkpw(forminfo['pw'].encode(), user.password.encode()):
+                loginValidationErrors['pw'] = "Password does not match"
+
+        return loginValidationErrors    
+
+class User(models.Model):
+    firstName = models.CharField(max_length = 255)
+    lastName = models.CharField(max_length = 255)
+    email = models.CharField(max_length = 255)
+    password = models.CharField(max_length = 255)
+    created_at = models.DateTimeField(auto_now_add = True)
+    updated_at = models.DateTimeField(auto_now = True)
+    objects = UserManager()
